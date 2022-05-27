@@ -5,7 +5,7 @@ import {
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import Head from 'next/head';
 
-interface ContentBlockProps {
+interface MetaProps {
   sitecoreContext: SitecoreContextValue;
 }
 
@@ -16,7 +16,7 @@ const publicUrl = getPublicUrl();
  * This is the most basic building block of a content site, and the most basic
  * JSS component that's useful.
  */
-const ContentBlock = ({ sitecoreContext }: ContentBlockProps): JSX.Element => {
+const Meta = ({ sitecoreContext }: MetaProps): JSX.Element => {
   return (
     <Head>
       <title>{sitecoreContext.route?.fields?.pageTitle.value} | Page Title</title>
@@ -25,4 +25,4 @@ const ContentBlock = ({ sitecoreContext }: ContentBlockProps): JSX.Element => {
   );
 };
 
-export default withSitecoreContext()(ContentBlock);
+export default withSitecoreContext()(Meta);
